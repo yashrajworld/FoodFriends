@@ -1,7 +1,6 @@
 const { number } = require('joi')
 const mongoose = require('mongoose')
 const passportLocalMongoose = require('passport-local-mongoose')
-
 const UserSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -12,7 +11,6 @@ const UserSchema = new mongoose.Schema({
         type: number,
         required: true,
         unique: true,
-
     }
 })
 UserSchema.plugin(passportLocalMongoose)
