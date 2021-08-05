@@ -24,6 +24,9 @@ const MongoDBStore = require('connect-mongo')(session)
 const ExpressError = require('./utils/ExpressError')
 const User = require('./models/user')
 
+//flash
+app.use(flash())
+
 
 const port = process.env.PORT || 3000
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/food-friends'
@@ -81,6 +84,11 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error')
     res.locals.currentUser = req.user // currentUser will store info of the usr logged in globally!
     next()
+})
+
+
+app.get('/', (req, res) => {
+    res.render('home')
 })
 
 

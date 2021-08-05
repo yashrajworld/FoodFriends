@@ -49,3 +49,4 @@ InformationSchema.virtual('properties.rating').get(function () {
     }
     return sum / count
 })
+module.exports = mongoose.model('Information', InformationSchema)
