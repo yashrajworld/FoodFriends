@@ -1,0 +1,34 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #f4a261;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"> <img
+                src="https://res.cloudinary.com/yashrajworld/image/upload/v1628336314/foodfriends/imgs/logo_v8r1nn.png"
+                alt="Food-Friends" width="80" height="50"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-link active" style="color: aliceblue; font-size: large;" href="/">Home</a>
+                <a class="nav-link" style="color: aliceblue; font-size: large;" href="/invites">Explore</a>
+                <% if(currentUser){ %>
+                    <a class="nav-link" style="color: aliceblue; font-size: large;" href="/post/create">Create Post</a>
+                    <% } %>
+            </div>
+
+            <div class="navbar-nav ms-auto">
+                <form class="d-flex" style="margin-right: 2rem;">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <% if(!currentUser) {%>
+                    <a class="nav-link" href="/user/login">Login</a>
+                    <a href="/user/register" class="nav-link">Register</a>
+                    <% } else{ %>
+                        <a href="/user/logout" class="nav-link">Log Out</a>
+                        <% } %>
+            </div>
+
+        </div>
+    </div>
+</nav>

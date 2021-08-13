@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container .d-flex justify-content-center align-items-center" style="margin-top: -2rem;">
+        <h1>Register</h1>
+
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <form action="/user/register" method="POST" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label" for="username">Username : </label>
+                        <input class="form-control" type="text" id="username" name="username" required autofocus>
+                        <div class="valid-feedback">Awesome!</div>
+                        <div class="invalid-feedback">What's wrong with you</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">E-mail : </label>
+                        <input class="form-control" type="email" id="email" name="email" required>
+                        <div class="valid-feedback">Awesome!</div>
+                        <div class="invalid-feedback">What's wrong with you</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="phone">Phone Number : </label>
+                        <input class="form-control" id="phone" name="phone" required>
+                        <div class="valid-feedback">Awesome!</div>
+                        <div class="invalid-feedback">What's wrong with you</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password : </label>
+                        <input class="form-control" type="password" id="password" name="password" required>
+                        <div class="valid-feedback">Awesome!</div>
+                        <div class="invalid-feedback">What's wrong with you</div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success ">Register</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="container">
+                    <img src="https://images.unsplash.com/photo-1469307580733-007134b82100?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                        class="img-fluid" alt="">
+                </div>
+                <div class="container">
+                    <a id="changeelement" href="/user/login" style="text-decoration: underline;">I am
+                        already member</a>
+                </div>
+
+            </div>
+        </div>
+    </div>

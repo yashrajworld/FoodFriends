@@ -13,22 +13,26 @@ const postSchema = new Schema({
             required: true
         }
     },
-    author: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    location: String,
-    description: String,
-    photos: [PhotoSchema],
-    pay: {
-        type: boolean,
-        required: true
-    },
-    contactmail: {
+    title: {
         type: String,
         required: true
     },
-    contactphone: {
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    description: String,
+    photos: [PhotoSchema],
+    pay: {
+        type: Boolean,
+        required: true
+    },
+    phone: {
         type: Number
     },
     time: {

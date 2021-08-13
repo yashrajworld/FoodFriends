@@ -4,7 +4,8 @@ const opts = { toJSON: { virtuals: true } }
 const InformationSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     reviews: [
         {

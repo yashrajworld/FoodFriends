@@ -86,10 +86,23 @@ app.use((req, res, next) => {
     next()
 })
 
+//Setting up routes
+const userRoutes = require('./routes/user')
+const mainRoutes = require('./routes/main')
+const postRoutes = require('./routes/post')
+
 
 app.get('/', (req, res) => {
     res.render('home')
 })
+
+app.get('/new', (req, res) => {
+    res.render('new')
+})
+
+app.use('/user', userRoutes)
+app.use('/main', mainRoutes)
+app.use('/post', postRoutes)
 
 
 //Error handling

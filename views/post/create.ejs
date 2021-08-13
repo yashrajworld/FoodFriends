@@ -1,0 +1,95 @@
+<% layout('layouts/boilerplate') %>
+    <% var long=81 %>
+        <% var lati=25 %>
+            <div class="container">
+                <div class="row">
+                    <div class="text-center h1">New Post</div>
+                    <div class="col-6 offset-3">
+                        <form action="/post/create" method="POST" novalidate class="needs-validation">
+                            <div class="mb-3">
+                                <label class="form-label" for="title">Title : </label>
+                                <input class="form-control" type="text" id="title" name="post[title]" required>
+                                <div class="valid-feedback">Awesome!</div>
+                                <div class="invalid-feedback">Just enter the name dude!</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="location">Location : </label> <br>
+                                <div id="map" style="width: max-width; height: 300px;"></div>
+                                <pre id="coordinates" class="coordinates"
+                                    style="background: rgba(0, 0, 0, 0.5); color: #fff; position: absolute; bottom: 40px; left: 10px; padding: 5px 10px; margin: 0; font-size: 11px; line-height: 18px; border-radius: 3px;display: none;"></pre>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label" for="price">Cost</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="radio" name="post[pay]" id="cost1"
+                                            value="false">
+                                    </div>
+                                    <label class="form-label" for="cost1">Free</label>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="radio" name="post[pay]" id="cost2"
+                                            value="true">
+                                    </div>
+                                    <label class="form-label ml-3" for="cost2">Contri</label>
+                                    <div class="valid-feedback">Fine now!</div>
+                                    <div class="invalid-feedback">Please... price :')</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="time">Time</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="radio" name="post[validity]"
+                                            id="time1" value="6">
+                                    </div>
+                                    <label class="form-label" for="time1">6 hrs</label>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="radio" name="post[validity]"
+                                            id="time2" value="12">
+                                    </div>
+                                    <label class="form-label" for="time2">12 hrs</label>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="radio" name="post[validity]"
+                                            id="time3" value="24">
+                                    </div>
+                                    <label class="form-label" for="time3">24 hrs</label>
+                                    <div class="valid-feedback">Fine now!</div>
+                                    <div class="invalid-feedback">Please... time :')</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input class="form-control" type="tel" id="phone" name="post[phone]">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="Description">Description : </label>
+                                <textarea class="form-control" type="text" id="description" name="post[description]"
+                                    required></textarea>
+                                <div class="valid-feedback">Awesome!</div>
+                                <div class="invalid-feedback">Running it without description dummy!</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="photos">Add Photos</label>
+                                <div class="mb-3">
+                                    <input class="form-control" type="file" id="formFileMultiple" name="image" multiple>
+                                </div>
+                                <div class="valid-feedback">Correct you dumbass!</div>
+                                <div class="invalid-feedback">This is disguisting!</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <button class="btn btn-success">Add Post</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <script src="/javascripts/createPageMap.js">
+            </script>

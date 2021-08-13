@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     info: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Information'
+    },
+    isVerified: {
+        type: Boolean,
+        default: false
     }
 })
 userSchema.plugin(passportLocalMongoose)
